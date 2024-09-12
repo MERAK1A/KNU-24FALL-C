@@ -15,26 +15,18 @@ int main(void)
 
     if (option == 1)
     {
-        
-
         printf("%lf + %lf = %lf", num1, num2, num1+num2);
     }   
     else if (option == 2)
     {
-        
-
         printf("%lf - %lf = %lf", num1, num2, num1 - num2);
     }
     else if (option == 3)
     {
-        
-
         printf("%lf * %lf = %lf", num1, num2, num1 * num2);
     }
     else if (option == 4)
     {
-        
-
         printf("%lf / %lf = %lf", num1, num2, num1 / num2);
     }
     else
