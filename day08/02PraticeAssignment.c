@@ -33,7 +33,7 @@ void printArray(int array[SIZE][SIZE]) {
         printf("\n");
     }
 }
-
+// void 포인터는 모든 타입의 주소를 저장할 수 있는 장점이 있다
 // 포인터 연산을 이용해 배열을 순회하는 함수
 void movePointer(void* array) {
 
