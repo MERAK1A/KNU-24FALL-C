@@ -12,7 +12,7 @@ int main(void) {
         for (int j = 0; j < num1 - i - 1; j++) {
             printf(" ");
         }
-        // 별 출력
+        // 별 출력.
         for (int k = 0; k < 2 * i + 1; k++) {
             printf("*");
         }

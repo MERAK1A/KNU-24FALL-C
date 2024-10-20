@@ -48,7 +48,8 @@ int main(void)
         }
     }
 
-    // 최종 원주율 계산, 출력
+
+    // 최종 원주율 계산, 출력.
     double final_pi = 4.0 * circle / TOTAL_POINTS;  
     printf("최종 원주율 : %.6f\n", final_pi);
 
