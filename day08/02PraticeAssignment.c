@@ -52,6 +52,7 @@ void movePointer(void* array) {
             index += value;              // 값을 더해 이동
         } else {
             printf("더 이상 이동할 수 없습니다.\n");
+            
             break;                       // 더 이상 이동할 수 없을 때 종료
         }   
     }
@@ -66,6 +67,7 @@ int main(void) {
     fillRandom(array);                  // 배열을 랜덤 값으로 초기화
     printArray(array);                  // 배열 출력
     movePointer(&array[0][0]);         // 포인터를 사용해 배열 순회
+
 
     return 0;
 }
