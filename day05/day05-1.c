@@ -3,7 +3,6 @@
 
 int main(void){
 
-    
     int N = 0;
     int* stu;
     char** name;

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct {
     int stu_id;    // 학번
     char name[100]; // 이름
