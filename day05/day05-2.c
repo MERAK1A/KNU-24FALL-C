@@ -33,6 +33,7 @@ int main(void) {
 
     // 입력된 학생 정보 출력
     printf("\n입력된 학생 정보:\n");
+    
     for (int i = 0; i < N; i++) {
         printf("%d %s %d\n", students[i].stu_id, students[i].name, students[i].score);
     }
