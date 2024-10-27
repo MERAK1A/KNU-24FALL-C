@@ -11,7 +11,7 @@ struct Product {
 void printProduct(struct Product p) {
     printf("상품 ID: %d\n", p.productID);
     printf("상품명: %s\n", p.productName);
-    printf("가격: %d\n", p.price);
+    printf("가격: %d원\n", p.price);
 }
 
 int main() {
@@ -24,7 +24,8 @@ int main() {
         printf("상품 정보를 입력하세요 (%d/5):\n", count + 1);
         printf("상품 ID: ");
         scanf("%d", &products[count].productID);
-
+        while (getchar() != '\n'); // 입력 버퍼 비우기
+        
         if (products[count].productID == 0){ // ID 에 0이 입력되면 종료
             break;
         }
@@ -36,14 +37,6 @@ int main() {
         
         count++; // 상품 개수 증가
 
-        // 추가 입력 여부 확인
-        if (count < 5) {
-            printf("계속 입력하시겠습니까? (y/n): ");
-            scanf(" %c", &choice);  // 개행문자 무시를 위한 공백
-            if (choice == 'n' || choice == 'N') {
-                break;  // 입력 중단
-            }
-        }
     }
     // 입력된 상품 목록 출력
     printf("\n입력된 상품 정보:\n");

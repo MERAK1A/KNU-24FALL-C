@@ -45,9 +45,11 @@ Vector cross(Vector v1, Vector v2) {
 // 벡터 입력 함수
 Vector input_vector() {
     Vector v;
-    printf("벡터의 x, y, z 값을 입력하세요: ");
-    scanf("%d %d %d", &v.x, &v.y, &v.z);
 
+    printf("벡터의 x, y, z 값을 입력하세요: ");
+    scanf("%d %d %d", &v.x, &v.y, &v.z);    
+    while (getchar() != '\n');
+    
     return v;
 }
 
@@ -73,7 +75,6 @@ int main() {
         printf("----------------------\n");
 
         printf("명령 입력 :");
-
 
         scanf("%d", &option);
 
@@ -112,7 +113,7 @@ int main() {
         }
         case 5:{
             //종료
-            
+            printf("종료");
             return 0;
         }
     }
