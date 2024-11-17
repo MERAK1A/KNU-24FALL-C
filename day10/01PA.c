@@ -10,26 +10,30 @@ typedef struct Student {
 
 Student* head = NULL;
 
-// 학생 노드 생성 및 정렬된 위치에 삽입
+// 학생 노드 생성 및 점수 순서대로 삽입 (내림차순 정렬)
 void ins_student(char* name, int score) {
     Student* new_student = (Student*)malloc(sizeof(Student));
     strcpy(new_student->name, name);
     new_student->score = score;
     new_student->next = NULL;
 
-    if (head == NULL || strcmp(head->name, name) > 0) {
+    // 리스트가 비어 있거나 새로운 학생이 가장 높은 점수를 가질 경우
+    if (head == NULL || head->score < score) {
         new_student->next = head;
         head = new_student;
     } else {
         Student* cur = head;
 
-        while (cur->next != NULL && strcmp(cur->next->name, name) < 0) {
+        // 현재 노드의 점수가 새 노드의 점수보다 높거나 같을 때까지 이동
+        while (cur->next != NULL && cur->next->score >= score) {
             cur = cur->next;
         }
+        // 새 노드 삽입
         new_student->next = cur->next;
         cur->next = new_student;
     }
 }
+
 
 // 학생 노드 삭제
 void del_student(char* name) {
@@ -77,7 +81,7 @@ void print_students() {
 
 // 메뉴 출력 및 선택
 void menu() {
-    int choice;
+    int option;
     char name[50];
     int score;
 
@@ -86,9 +90,9 @@ void menu() {
         printf("2. 학생 정보 제거\n");
         printf("3. 프로그램 종료\n");
         printf("input : ");
-        scanf("%d", &choice);
+        scanf("%d", &option);
 
-        switch (choice) {
+        switch (option) {
             case 1:
                 printf("학생 이름: ");
                 scanf("%s", name);
